@@ -1,0 +1,13 @@
+{
+  "extends": "../../configurations/typescript/tsconfig.libraries.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "module": "ESNext",
+    "declaration": false,
+    "baseUrl": "src",
+    "paths": {
+      "@yourapp/ui": ["index.ts"]
+    }
+  },
+  "include": ["src", "docs"]
+}

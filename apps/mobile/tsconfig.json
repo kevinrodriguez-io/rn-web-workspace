@@ -1,0 +1,6 @@
+{
+  "extends": "../../configurations/typescript/tsconfig.apps.json",
+  "compilerOptions": {
+    "jsx": "react-native"
+  }
+}

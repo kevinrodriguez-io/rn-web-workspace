@@ -1,0 +1,7 @@
+{
+  "extends": "../../configurations/typescript/tsconfig.libraries.json",
+  "compilerOptions": {
+    "outDir": "dist"
+  },
+  "include": ["src"],
+}

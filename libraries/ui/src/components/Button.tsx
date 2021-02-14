@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { TouchableOpacityProps, TextProps, Platform } from 'react-native'
+import { TextProps, Platform, PressableProps } from 'react-native'
 import styled from '@emotion/native'
 
 export type BaseButtonVariant =
@@ -30,12 +30,12 @@ const getButtonBackgroundColor = (
   }
 }
 
-export type BaseButtonProps = TouchableOpacityProps & {
+export type BaseButtonProps = PressableProps & {
   variant?: BaseButtonVariant
   isIcon?: boolean
 }
 
-const BaseButton = styled.TouchableOpacity<BaseButtonProps>(
+const BaseButton = styled.Pressable<BaseButtonProps>(
   {
     height: 52,
     borderRadius: 12,
@@ -97,6 +97,17 @@ export const Button: FC<ButtonProps> = ({
       isIcon={isIcon}
       variant={variant}
       disabled={disabled}
+      style={(status) => ({
+        ...Platform.select({
+          web: {
+            opacity: status.pressed ? 0.5 : 1,
+            // Add others like focused, hovered
+          },
+          native: {
+            opacity: status.pressed ? 0.5 : 1,
+          },
+        }),
+      })}
       {...props}
     >
       {isIcon ? (

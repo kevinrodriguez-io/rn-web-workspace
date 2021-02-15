@@ -1,46 +1,70 @@
-import React from 'react'
+import React, { FC, useEffect } from 'react'
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native'
-import { Button, useUIFonts } from '@yourapp/ui'
+import { Button } from '@yourapp/ui'
+import { loadAsync } from 'expo-font'
 import {
   OpenSans_300Light,
   OpenSans_400Regular,
   OpenSans_600SemiBold,
   OpenSans_700Bold,
-  useFonts,
 } from '@expo-google-fonts/open-sans'
+import { useState } from 'react'
 
-export default function App() {
-  const [loading, error] = useFonts({
-    OpenSans_300Light,
-    OpenSans_400Regular,
-    OpenSans_600SemiBold,
-    OpenSans_700Bold,
-  })
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <Text>Open up App.tsx to start working on your app!</Text>
+      <View style={styles.spacer} />
+      <View>
+        <Button onPress={() => alert('Test')}>Primary</Button>
+        <View style={styles.spacer} />
+        <Button variant="SECONDARY" onPress={() => alert('Test')}>
+          Secondary
+        </Button>
+        <View style={styles.spacer} />
+        <Button disabled onPress={() => alert('Test')}>
+          Disabled
+        </Button>
+      </View>
+    </View>
+  )
+}
+
+const AppWrapper: FC = () => {
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<Error | null>(null)
+  useEffect(() => {
+    ;(async () => {
+      try {
+        await loadAsync({
+          OpenSans_300Light,
+          OpenSans_400Regular,
+          OpenSans_600SemiBold,
+          OpenSans_700Bold,
+        })
+      } catch (error) {
+        setError(error)
+      } finally {
+        setLoading(false)
+      }
+    })()
+  }, [])
   if (error) {
     return (
       <View style={styles.container}>{JSON.stringify(error, null, 2)}</View>
     )
   }
-
-  return (
-    <View style={styles.container}>
-      {loading ? (
+  if (loading) {
+    return (
+      <View style={styles.container}>
         <ActivityIndicator />
-      ) : (
-        <>
-          <Text>Open up App.tsx to start working on your app!</Text>
-          <Button onPress={() => alert('Test')}>Primary</Button>
-          <Button variant="SECONDARY" onPress={() => alert('Test')}>
-            Secondary
-          </Button>
-          <Button disabled onPress={() => alert('Test')}>
-            Disabled
-          </Button>
-        </>
-      )}
-    </View>
-  )
+      </View>
+    )
+  }
+  return <App />
 }
+
+export default AppWrapper
 
 const styles = StyleSheet.create({
   container: {
@@ -48,5 +72,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  spacer: {
+    margin: 10,
   },
 })

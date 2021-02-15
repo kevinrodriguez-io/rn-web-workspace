@@ -17,6 +17,7 @@
     "start:mobile-ios-xcode": "yarn workspace @yourapp/mobile xcode",
     "start:mobile": "yarn workspace @yourapp/mobile start",
     "start:mobile-expo": "yarn workspace @yourapp/mobile expo",
+    "start:ui-lib": "yarn workspace @yourapp/ui dev",
     "start:ui": "yarn workspace @yourapp/ui dev:all",
     "start:ui-docs": "yarn workspace @yourapp/ui dev:docs",
     "build:ui": "yarn workspace @yourapp/ui build",

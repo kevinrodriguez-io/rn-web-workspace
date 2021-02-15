@@ -12,16 +12,22 @@
     "libraries/*"
   ],
   "scripts": {
+    "// Web app scripts": "",
+    "start:web": "yarn workspace @yourapp/web start",
+    "build:web": "yarn workspace @yourapp/web build",
+    "// Mobile app scripts": "",
     "start:mobile-android": "yarn workspace @yourapp/mobile android",
     "start:mobile-ios": "yarn workspace @yourapp/mobile ios",
     "start:mobile-ios-xcode": "yarn workspace @yourapp/mobile xcode",
     "start:mobile": "yarn workspace @yourapp/mobile start",
     "start:mobile-expo": "yarn workspace @yourapp/mobile expo",
+    "// UI Related scripts": "",
     "start:ui-lib": "yarn workspace @yourapp/ui dev",
     "start:ui": "yarn workspace @yourapp/ui dev:all",
     "start:ui-docs": "yarn workspace @yourapp/ui dev:docs",
     "build:ui": "yarn workspace @yourapp/ui build",
     "clean:ui": "yarn workspace @yourapp/ui clean",
+    "// Setup and cleanup scripts": "",
     "nuke:node-modules": "find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' +",
     "setup": "yarn install",
     "setup:cocoapods": "yarn workspace @yourapp/mobile run-pod-install"

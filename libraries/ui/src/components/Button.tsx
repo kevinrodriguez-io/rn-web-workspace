@@ -63,17 +63,26 @@ const ButtonText = styled.Text<ButtonTextProps>(
     fontWeight: '500',
     fontSize: 14,
     textAlign: 'center',
-  },
-  ({ disabled, disableUpperCase }) => ({
+    /**
+     * Loading fonts is a little bit different in web
+     * vs mobile, in web we usually import different
+     * font weights for the same font family and have fallbacks,
+     * on mobile the usual pattern is to have the apple postscript
+     * file name in both android and ios projects so it can be
+     * properly used. To install additional fonts you can use:
+     * npx react-native-get-google-font
+     */
     ...Platform.select({
       web: {
         fontFamiliy: "'Open Sans', sans-serif",
         fontWeight: '400',
       },
       native: {
-        fontFamily: 'OpenSans_400Regular',
+        fontFamily: 'OpenSans-Regular',
       },
     }),
+  },
+  ({ disabled, disableUpperCase }) => ({
     color: disabled ? 'rgba(69, 79, 99, 255)' : 'rgba(255, 255, 255, 255)',
     textTransform: disableUpperCase ? 'capitalize' : 'uppercase',
   }),

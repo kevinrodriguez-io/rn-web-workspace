@@ -21,17 +21,15 @@
   },
   "dependencies": {
     "expo": "~40.0.0",
-    "expo-font": "~8.4.0",
-    "@expo-google-fonts/open-sans": "^0.1.0",
     "expo-splash-screen": "~0.8.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "0.63.4",
+    "react-native-web": "0.14.12",
     "react-native-gesture-handler": "~1.8.0",
     "react-native-reanimated": "~1.13.0",
     "react-native-screens": "~2.15.0",
-    "react-native-unimodules": "~0.12.0",
-    "react-native-web": "0.14.12"
+    "react-native-unimodules": "~0.12.0"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0",

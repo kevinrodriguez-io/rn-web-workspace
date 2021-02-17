@@ -1,6 +1,9 @@
 {
   "extends": "../../configurations/typescript/tsconfig.apps.json",
   "compilerOptions": {
-    "jsx": "react-native"
-  }
+    "jsx": "react-native",
+    "baseUrl": "./src",
+    "rootDirs": ["./src"]
+  },
+  "include": ["./src", "./App.tsx"]
 }

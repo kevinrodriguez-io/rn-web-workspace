@@ -1,3 +1,3 @@
 # Web
 
-Some create-react-app project
+Simple create-react-app project

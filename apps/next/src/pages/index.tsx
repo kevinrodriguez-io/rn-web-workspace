@@ -1,10 +1,16 @@
 import { FC } from 'react'
-import { SomeText } from '@yourapp/ui'
+import { Button } from '@yourapp/ui'
 
 const IndexPage: FC = () => {
   return (
     <div>
-      <SomeText>ALGO BIEN VISTOSO</SomeText>
+      <Button onPress={() => alert('Test')}>Primary</Button>
+      <Button variant="SECONDARY" onPress={() => alert('Test')}>
+        Secondary
+      </Button>
+      <Button disabled onPress={() => alert('Test')}>
+        Disabled
+      </Button>
     </div>
   )
 }

@@ -14,6 +14,8 @@
   "scripts": {
     "// Next.js app scripts": "",
     "start:next": "yarn workspace @yourapp/next dev",
+    "build:next": "yarn workspace @yourapp/next build",
+    "run:next": "yarn workspace @yourapp/next start",
     "// Web app scripts": "",
     "start:web": "yarn workspace @yourapp/web start",
     "build:web": "yarn workspace @yourapp/web build",
@@ -30,7 +32,6 @@
     "build:ui": "yarn workspace @yourapp/ui build",
     "clean:ui": "yarn workspace @yourapp/ui clean",
     "// Setup and cleanup scripts": "",
-    "postinstall": "patch-package",
     "nuke:node-modules": "find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' +",
     "setup": "yarn install",
     "setup:cocoapods": "yarn workspace @yourapp/mobile run-pod-install"
@@ -42,8 +43,6 @@
     "react-native": "0.63.4"
   },
   "devDependencies": {
-    "prettier": "^2.0.5",
-    "patch-package": "^6.2.2",
-    "postinstall-postinstall": "^2.1.0"
+    "prettier": "^2.0.5"
   }
 }

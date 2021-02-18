@@ -1,0 +1,28 @@
+{
+  "name": "@yourapp/next",
+  "version": "0.1.0",
+  "description": "Next application for current monorepo",
+  "main": "index.js",
+  "author": "Kevin Rodriguez <_@kevinrodriguez.io>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "start": "next start",
+    "build": "next build"
+  },
+  "dependencies": {
+    "next": "latest",
+    "@expo/next-adapter": "^2.1.59",
+    "next-compose-plugins": "^2.2.1",
+    "next-transpile-modules": "^6.3.0",
+    "babel-plugin-react-native-web": "0.14.12",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-native-web": "0.14.12"
+  },
+  "devDependencies": {
+    "react-native": "0.63.4",
+    "@types/react-native": "^0.63.48"
+  }
+}

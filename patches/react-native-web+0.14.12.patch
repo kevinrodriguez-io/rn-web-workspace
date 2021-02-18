@@ -1,0 +1,29 @@
+diff --git a/node_modules/react-native-web/src/exports/StyleSheet/ReactNativePropRegistry.js b/node_modules/react-native-web/src/exports/StyleSheet/ReactNativePropRegistry.js
+index b461663..240a4c2 100644
+--- a/node_modules/react-native-web/src/exports/StyleSheet/ReactNativePropRegistry.js
++++ b/node_modules/react-native-web/src/exports/StyleSheet/ReactNativePropRegistry.js
+@@ -17,6 +17,7 @@ const createKey = id => `${prefix}-${id}`;
+ 
+ export default class ReactNativePropRegistry {
+   static register(object: Object): number {
++    console.warn(objects);
+     const id = uniqueID++;
+     if (process.env.NODE_ENV !== 'production') {
+       Object.freeze(object);
+@@ -27,6 +28,8 @@ export default class ReactNativePropRegistry {
+   }
+ 
+   static getByID(id: number): Object {
++    console.warn(objects);
++    console.warn(🍀, id);
+     if (!id) {
+       // Used in the style={[condition && id]} pattern,
+       // we want it to be a no-op when the value is false or null
+@@ -34,6 +37,7 @@ export default class ReactNativePropRegistry {
+     }
+     const key = createKey(id);
+     const object = objects[key];
++    console.warn(🚀, key, object);
+     if (!object) {
+       console.warn('Invalid style with id `' + id + '`. Skipping ...');
+       return emptyObject;

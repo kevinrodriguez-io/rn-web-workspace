@@ -12,6 +12,8 @@
     "libraries/*"
   ],
   "scripts": {
+    "// Next.js app scripts": "",
+    "start:next": "yarn workspace @yourapp/next dev",
     "// Web app scripts": "",
     "start:web": "yarn workspace @yourapp/web start",
     "build:web": "yarn workspace @yourapp/web build",

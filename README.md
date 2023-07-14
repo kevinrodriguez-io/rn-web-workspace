@@ -1,3 +1,12 @@
+# Note to everyone
+
+Hi guys, I did this during a time Monorepos on Expo were a bit cumbersome to set up;
+This repo's expo version is a bit outdated too.
+
+I **strongly** suggest trying the Turborepo and react-native starter which is based on
+expo and next.js, https://vercel.com/templates/next.js/turborepo-react-native and probably
+has way better maintainance.
+
 # React Native + React Web Workspace
 
 After some time working on both native and web projects I realized that there are some essential differences
